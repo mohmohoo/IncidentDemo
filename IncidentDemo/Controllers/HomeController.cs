@@ -28,5 +28,18 @@ namespace IncidentDemo.Controllers
             _repository.Delete(incident);
             return RedirectToAction("List");
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View("Create");
+        }
+
+        [HttpPost]
+        public ActionResult Create(Incident incident)
+        {
+            _repository.Create(incident);
+            return RedirectToAction("List");
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace IncidentDemo.Repository
             _context = context;
         }
 
-        public IResult<Incident> Add(Incident incident)
+        public IResult<Incident> Create(Incident incident)
         {
             throw new System.NotImplementedException();
         }

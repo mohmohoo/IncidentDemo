@@ -2,38 +2,56 @@
 @{
     ViewBag.Title = "List";
 }
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Description</th>
-            <th>Person Involved</th>
-            <th>Happened At</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)<br />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PersonInvolved)<br />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HappenedAt)<br />
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit")<br />
-            </td>
-            <td>
-                <button
-                       class="btn btn-danger"
-                       value="Delete" 
-                       onclick="location.href='@Url.Action("Delete", "Home", new { Description = item.Description })'" >
-                    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
-            </td>
-        </tr>
-    }
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-success"
+                    onclick="location.href='@Url.Action("Create", "Home")'">
+                        + Create</button>
+        </div>
+        
+    </div>
+    <br />
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Person Involved</th>
+                        <th>Happened At</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)<br />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PersonInvolved)<br />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HappenedAt)<br />
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit")<br />
+                        </td>
+                        <td>
+                            <button class="btn btn-danger"
+                                    value="Delete"
+                                    onclick="location.href='@Url.Action("Delete", "Home", new { Description = item.Description })'">
+                                <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

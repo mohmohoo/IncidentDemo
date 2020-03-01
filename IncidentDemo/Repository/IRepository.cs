@@ -4,7 +4,7 @@ namespace IncidentDemo.Repository
 {
     public interface IRepository<TRepoObject>
     {
-        IResult<TRepoObject> Add(TRepoObject incident);
+        IResult<TRepoObject> Create(TRepoObject incident);
 
         IResult<TRepoObject> Update(TRepoObject incident);
 
