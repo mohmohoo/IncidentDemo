@@ -17,5 +17,10 @@ namespace IncidentDemo.Controllers
         {
             return View(_repository.List().Output);
         }
+
+        public void Delete(Incident incident)
+        {
+            RedirectToAction("Index");
+        }
     }
 }

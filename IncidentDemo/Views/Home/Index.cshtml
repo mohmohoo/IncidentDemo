@@ -2,12 +2,14 @@
 @{
     ViewBag.Title = "List";
 }
-<table>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Description</th>
             <th>Person Involved</th>
             <th>Happened At</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     @foreach (var item in Model)
@@ -22,7 +24,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.HappenedAt)<br />
             </td>
-
+            <td>
+                @Html.ActionLink("Edit", "Edit")<br />
+            </td>
+            <td>
+                <button
+                       class="btn btn-danger"
+                       value="Delete" 
+                       onclick="location.href='@Url.Action("Delete", "Home", new { incident = item })'" >
+                    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+            </td>
         </tr>
     }
 </table>
