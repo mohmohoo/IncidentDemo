@@ -4,8 +4,6 @@ using IncidentDemo.Models;
 
 namespace IncidentDemo.Repository
 {
-    
-
     public class IncidentRepository
         : IRepository<Incident>
     {
@@ -18,7 +16,8 @@ namespace IncidentDemo.Repository
 
         public IResult<Incident> Create(Incident incident)
         {
-            throw new System.NotImplementedException();
+            _context.Incidents = _context.Incidents.Concat(new[] { incident });
+            return Result.Success(incident, "Create success");
         }
 
         public IResult<Incident> Delete(Incident incident)
