@@ -14,6 +14,12 @@ namespace IncidentDemo.Repository
             _context = context;
         }
 
+        public IResult<Incident> Get(int id)
+        {
+            var incident = _context.Incidents.Where(i => i.Id == id).SingleOrDefault();
+            return Result.Success(incident, "Get success");
+        }
+
         public IResult<Incident> Create(Incident incident)
         {
             _context.Incidents = _context.Incidents.Concat(new[] { incident });
@@ -33,7 +39,17 @@ namespace IncidentDemo.Repository
 
         public IResult<Incident> Update(Incident incident)
         {
-            throw new System.NotImplementedException();
+            _context
+                .Incidents
+                .Where(i => i.Id == incident.Id)
+                .ToList()
+                .ForEach(i => {
+                    i.IncidentTypes = incident.IncidentTypes;
+                    i.Description = incident.Description;
+                    i.HappenedAt = incident.HappenedAt;
+                    i.PersonInvolved = incident.PersonInvolved;
+                });
+            return Result.Success(incident, "Update Success");
         }
     }
 }

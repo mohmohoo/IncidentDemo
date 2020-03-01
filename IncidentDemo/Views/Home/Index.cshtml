@@ -37,11 +37,13 @@
                             @Html.DisplayFor(modelItem => item.HappenedAt)<br />
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit")<br />
+                            <button class="btn btn-primary"
+                                    onclick="location.href='@Url.Action("Update", "Home", new { id = item.Id })'">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            </button>
                         </td>
                         <td>
                             <button class="btn btn-danger"
-                                    value="Delete"
                                     onclick="location.href='@Url.Action("Delete", "Home", new { id = item.Id })'">
                                 <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
                             </button>

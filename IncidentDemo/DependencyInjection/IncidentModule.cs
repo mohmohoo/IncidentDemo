@@ -20,6 +20,7 @@ namespace IncidentDemo.DependencyInjection
                         {
                             new Incident
                             {
+                                Id = 1,
                                 Description = "Sample Incident Description",
                                 HappenedAt = DateTime.Now,
                                 IncidentTypes = new IncidentType[0],

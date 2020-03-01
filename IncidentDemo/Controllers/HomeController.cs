@@ -41,5 +41,19 @@ namespace IncidentDemo.Controllers
             _repository.Create(incident);
             return RedirectToAction("List");
         }
+
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            var incidentGetResult = _repository.Get(id);
+            return View(incidentGetResult.Output);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Incident incident)
+        {
+            _repository.Update(incident);
+            return RedirectToAction("List");
+        }
     }
 }
