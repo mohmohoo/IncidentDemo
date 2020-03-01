@@ -1,3 +1,28 @@
-﻿@{
+﻿@model IEnumerable<IncidentDemo.Models.Incident>
+@{
     ViewBag.Title = "List";
 }
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Person Involved</th>
+            <th>Happened At</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)<br />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonInvolved)<br />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HappenedAt)<br />
+            </td>
+
+        </tr>
+    }
+</table>

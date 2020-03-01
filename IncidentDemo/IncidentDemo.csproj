@@ -168,9 +168,12 @@
     <Compile Include="Models\Incident.cs" />
     <Compile Include="Models\IncidentType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IIncidentDataContext.cs" />
+    <Compile Include="Repository\IncidentDataContext.cs" />
     <Compile Include="Repository\IncidentRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\IResult.cs" />
+    <Compile Include="Repository\Result.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
