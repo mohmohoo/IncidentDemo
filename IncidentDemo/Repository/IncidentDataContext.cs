@@ -1,13 +1,13 @@
 ﻿using IncidentDemo.Models;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace IncidentDemo.Repository
 {
     public class IncidentDataContext
         : IIncidentDataContext
     {
-        public IQueryable<Incident> Incidents { get; set; }
+        public IList<Incident> Incidents { get; set; }
 
-        public IQueryable<IncidentType> IncidentTypes { get; set; }
+        public IList<IncidentType> IncidentTypes { get; set; }
     }
 }

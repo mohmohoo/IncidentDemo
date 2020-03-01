@@ -22,13 +22,13 @@ namespace IncidentDemo.Repository
 
         public IResult<Incident> Create(Incident incident)
         {
-            _context.Incidents = _context.Incidents.Concat(new[] { incident });
+            _context.Incidents = _context.Incidents.Concat(new[] { incident }).ToArray();
             return Result.Success(incident, "Create success");
         }
 
         public IResult<Incident> Delete(Incident incident)
         {
-            _context.Incidents = _context.Incidents.Where(x => x.Id != incident.Id);
+            _context.Incidents = _context.Incidents.Where(x => x.Id != incident.Id).ToArray();
             return Result.Success(incident, "Delete success");
         }
 

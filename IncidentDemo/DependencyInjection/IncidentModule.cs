@@ -16,7 +16,7 @@ namespace IncidentDemo.DependencyInjection
             Bind<IIncidentDataContext>()
                 .ToConstant(new IncidentDataContext
                     {
-                        Incidents = new List<Incident>
+                        Incidents = new []
                         {
                             new Incident
                             {
@@ -29,7 +29,7 @@ namespace IncidentDemo.DependencyInjection
                                 },
                                 PersonInvolved = "Someone Unfortunate"
                             }
-                        }.AsQueryable()
+                        }
                     })
                 .InSingletonScope();
         }
