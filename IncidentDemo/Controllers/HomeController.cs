@@ -20,7 +20,7 @@ namespace IncidentDemo.Controllers
 
         public ActionResult List()
         {
-            return PartialView(_repository.List().Output);
+            return View("Index", _repository.List().Output);
         }
 
         public ActionResult Delete(Incident incident)

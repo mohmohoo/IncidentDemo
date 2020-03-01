@@ -31,7 +31,7 @@
                 <button
                        class="btn btn-danger"
                        value="Delete" 
-                       onclick="location.href='@Url.Action("Delete", "Home", Html.Raw(Json.Encode(item)))'" >
+                       onclick="location.href='@Url.Action("Delete", "Home", new { Description = item.Description })'" >
                     <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
             </td>
         </tr>
