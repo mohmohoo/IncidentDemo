@@ -23,7 +23,10 @@ namespace IncidentDemo.DependencyInjection
                                 Id = 1,
                                 Description = "Sample Incident Description",
                                 HappenedAt = DateTime.Now,
-                                IncidentTypes = new IncidentType[0],
+                                IncidentTypes = new [] {
+                                    new IncidentType { Description = "Incident Type 1" },
+                                    new IncidentType { Description = "Incident Type 2" }
+                                },
                                 PersonInvolved = "Someone Unfortunate"
                             }
                         }.AsQueryable()

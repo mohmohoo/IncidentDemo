@@ -20,6 +20,7 @@
                         <th>Description</th>
                         <th>Person Involved</th>
                         <th>Happened At</th>
+                        <th>Incident Types</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -35,6 +36,9 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.HappenedAt)<br />
+                        </td>
+                        <td>
+                            @string.Join(", ", item.IncidentTypes.Select(type => type.Description).ToArray())
                         </td>
                         <td>
                             <button class="btn btn-primary"
