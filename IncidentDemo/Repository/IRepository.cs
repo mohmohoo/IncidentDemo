@@ -1,16 +1,15 @@
-﻿using IncidentDemo.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace IncidentDemo.Repository
 {
-    public interface IRepository
+    public interface IRepository<TRepoObject>
     {
-        IResult<IIncident> Add(IIncident incident);
+        IResult<TRepoObject> Add(TRepoObject incident);
 
-        IResult<IIncident> Update(IIncident incident);
+        IResult<TRepoObject> Update(TRepoObject incident);
 
-        IResult<IIncident> Delete(IIncident incident);
+        IResult<TRepoObject> Delete(TRepoObject incident);
 
-        IResult<IEnumerable<IIncident>> List();
+        IResult<IEnumerable<TRepoObject>> List();
     }
 }
