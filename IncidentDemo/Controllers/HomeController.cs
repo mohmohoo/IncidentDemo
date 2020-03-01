@@ -18,9 +18,15 @@ namespace IncidentDemo.Controllers
             return View(_repository.List().Output);
         }
 
-        public void Delete(Incident incident)
+        public ActionResult List()
         {
-            RedirectToAction("Index");
+            return PartialView(_repository.List().Output);
+        }
+
+        public ActionResult Delete(Incident incident)
+        {
+            _repository.Delete(incident);
+            return RedirectToAction("List");
         }
     }
 }

@@ -23,12 +23,13 @@ namespace IncidentDemo.Repository
 
         public IResult<Incident> Delete(Incident incident)
         {
-            throw new System.NotImplementedException();
+            _context.Incidents = _context.Incidents.Where(x => x.Description != incident.Description);
+            return Result.Success(incident, "Delete success");
         }
 
         public IResult<IEnumerable<Incident>> List()
         {
-            return Result.Success(_context.Incidents.AsEnumerable());
+            return Result.Success(_context.Incidents.AsEnumerable(), "List success");
         }
 
         public IResult<Incident> Update(Incident incident)

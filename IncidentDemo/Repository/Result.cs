@@ -2,13 +2,13 @@
 {
     public class Result
     {
-        public static IResult<TOutput> Success<TOutput>(TOutput output)
+        public static IResult<TOutput> Success<TOutput>(TOutput output, string message)
             => new ResultObject<TOutput>
             {
                 Output = output,
                 Success = true,
-                SystemMessage = "Success",
-                UserMessage = "Success"
+                SystemMessage = message,
+                UserMessage = message
             };
 
         private class ResultObject<TOutput>
