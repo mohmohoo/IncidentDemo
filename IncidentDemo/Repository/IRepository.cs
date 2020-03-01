@@ -5,12 +5,12 @@ namespace IncidentDemo.Repository
 {
     public interface IRepository
     {
-        IResult<Incident> Add(Incident incident);
+        IResult<IIncident> Add(IIncident incident);
 
-        IResult<Incident> Update(Incident incident);
+        IResult<IIncident> Update(IIncident incident);
 
-        IResult<Incident> Delete(Incident incident);
+        IResult<IIncident> Delete(IIncident incident);
 
-        IResult<IEnumerable<Incident>> List();
+        IResult<IEnumerable<IIncident>> List();
     }
 }

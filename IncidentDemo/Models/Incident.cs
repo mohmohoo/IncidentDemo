@@ -3,8 +3,9 @@
 namespace IncidentDemo.Models
 {
     public class Incident
+        : IIncident
     {
-        public IncidentType[] IncidentTypes { get; set; }
+        public IIncidentType[] IncidentTypes { get; set; }
 
         public DateTime HappenedAt { get; set; }
 
