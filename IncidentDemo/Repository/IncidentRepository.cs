@@ -22,7 +22,7 @@ namespace IncidentDemo.Repository
 
         public IResult<Incident> Delete(Incident incident)
         {
-            _context.Incidents = _context.Incidents.Where(x => x.Description != incident.Description);
+            _context.Incidents = _context.Incidents.Where(x => x.Id != incident.Id);
             return Result.Success(incident, "Delete success");
         }
 
